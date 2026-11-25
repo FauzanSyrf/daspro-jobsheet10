@@ -3,7 +3,11 @@ import java.util.Scanner;
 public class SIAKAD12 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[][] nilai = new int[4][3];
+        System.out.print("Masukkan banyak mahasiswa: ");
+        int banyak = sc.nextInt();
+        System.out.print("Masukkan jumlah matkul: ");
+        int jumlah = sc.nextInt();
+        int nilai[][] = new int[banyak][jumlah];
 
         // Input nilai dan hitung rata-rata per mahasiswa
         for (int i = 0; i < nilai.length; i++) {
@@ -16,7 +20,7 @@ public class SIAKAD12 {
                 totalPerSiswa += nilai[i][j];
             }
 
-            System.out.println("Nilai rata-rata: " + totalPerSiswa / 3);
+            System.out.println("Nilai rata-rata: " + totalPerSiswa / banyak);
         }
 
         System.out.println("\n================================");
@@ -30,7 +34,7 @@ public class SIAKAD12 {
                 totalPerMatkul += nilai[i][j];
             }
 
-            System.out.println("Mata Kuliah " + (j + 1) + ": " + totalPerMatkul / 4);
+            System.out.println("Mata Kuliah " + (j + 1) + ": " + totalPerMatkul / jumlah);
         }
     }
 }
